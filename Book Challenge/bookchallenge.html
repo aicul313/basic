@@ -34,12 +34,27 @@
 </head>
 
 <body>
+
   <div id="container">
     <h1>책 읽기</h1>
     <p><span class="accent" id="result"></span>일 연속으로
     <br>책 읽기를 달성했군요.</p>
     <p>축하합니다!</p>
   </div>
+
+  <script>
+    var now = new Date();
+    var firstDay = new Date("2024-08-01");
+
+    var toNow = now.getTime();
+    var toFirst = firstDay.getTime();
+    var passedTime = toNow - toFirst; // passedTime 값이 밀리초로 계산 되어 나타남.
+
+    passedTime = Math.round(passedTime / (24 * 60 * 60 * 1000)); // (1일 * 1시간 * 1분 * 1000초)
+
+    document.querySelector('#result').innerText = passedTime;
+  </script>
+
 </body>
 
 </html>
